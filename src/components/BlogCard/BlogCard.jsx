@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const BlogCard = ({
   poster,
   tag,
@@ -21,3 +23,13 @@ export const BlogCard = ({
     </div>
   );
 };
+
+BlogCard.propTypes = {
+  poster:PropTypes.string.isRequired,
+  tag:PropTypes.string.isRequired,
+  title:PropTypes.string.isRequired,
+  description:PropTypes.string.isRequired,
+  name:PropTypes.string.isRequired,
+  avatar:PropTypes.string.isRequired,
+  postedAt:PropTypes.string.isRequired,
+}
