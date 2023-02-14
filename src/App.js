@@ -5,6 +5,8 @@ import { Forbes } from './components/ForbesList/Forbes';
 import article from './data/article.json';
 import statistics from './data/statistics.json';
 import forbes from './data/forbes.json';
+import transactions from './data/transactions.json';
+import { Transactions } from './components/Transactions/Transactions';
 
 function App() {
   return (
@@ -12,8 +14,9 @@ function App() {
       <BlogCard {...article} />
       <Statistics data={statistics} title="Main Statistics" />
       <Statistics data={statistics} />
-      ç
       <Forbes list={forbes} title="hello" />
+      <Forbes list={forbes} />
+      <Transactions items={transactions} />
     </div>
   );
 }
