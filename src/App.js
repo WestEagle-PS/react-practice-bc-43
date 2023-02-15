@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <BlogCard {...article} />
       <Statistics data={statistics} title="Main Statistics" />
-      <Statistics data={statistics} />
+      {/* <Statistics data={statistics} /> */}
       <Forbes list={forbes} title="hello" />
       <Forbes list={forbes} />
       <Transactions items={transactions} />
