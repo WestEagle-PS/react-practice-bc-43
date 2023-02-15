@@ -3,9 +3,14 @@ import { Container, Title, List, Total, Text, Item } from './Statistics.styled';
 import { BiLike } from 'react-icons/bi';
 import { MdPeople, MdAddShoppingCart } from 'react-icons/md';
 import { GiTreeDoor } from 'react-icons/gi';
-import { Like } from './Statistics.styled';
+import { Like, Icon } from './Statistics.styled';
 
-const iconArr = [<Like />, <MdPeople />, <MdAddShoppingCart />, <GiTreeDoor />];
+const iconArr = [
+  <BiLike />,
+  <MdPeople />,
+  <MdAddShoppingCart />,
+  <GiTreeDoor />,
+];
 
 export const Statistics = ({ title, data }) => {
   return (
@@ -15,7 +20,7 @@ export const Statistics = ({ title, data }) => {
         {data.map(({ id, title, total }, index) => (
           <Item key={id}>
             <Total>
-              <div>{iconArr[index]}</div>
+              <Icon>{iconArr[index]}</Icon>
               {total}
             </Total>
             <Text>{title}</Text>
