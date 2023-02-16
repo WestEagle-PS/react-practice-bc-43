@@ -1,9 +1,12 @@
+import { Component } from 'react';
+
 import PropTypes from 'prop-types';
 import { Container, Title, List, Total, Text, Item } from './Statistics.styled';
 import { BiLike } from 'react-icons/bi';
 import { MdPeople, MdAddShoppingCart } from 'react-icons/md';
 import { GiTreeDoor } from 'react-icons/gi';
 import { Like, Icon } from './Statistics.styled';
+
 
 const iconArr = [
   <BiLike />,
@@ -12,13 +15,32 @@ const iconArr = [
   <GiTreeDoor />,
 ];
 
-export const Statistics = ({ title, data }) => {
-  return (
+
+export class Statistics extends Component {
+
+  state = {
+  isActive : null,
+  }
+
+  changeColor = (index)=> {
+    this.setState({
+      isActive: index,
+})
+  }
+  
+  render() {
+
+    const { title, data } = this.props
+    const { changeColor } = this
+   
+    
+    
+    return (
     <Container>
       {title && <Title>{title}</Title>}
       <List>
         {data.map(({ id, title, total }, index) => (
-          <Item key={id}>
+          <Item key={id}  onClick={()=>changeColor(index)} active={ this.state.isActive === index }>
             <Total>
               <Icon>{iconArr[index]}</Icon>
               {total}
@@ -29,7 +51,18 @@ export const Statistics = ({ title, data }) => {
       </List>
     </Container>
   );
-};
+  }
+}
+
+
+
+
+
+
+
+// export const Statistics = ({ title, data }) => {
+  
+// };
 
 Statistics.propTypes = {
   title: PropTypes.string,

@@ -23,7 +23,9 @@ export const Item = styled(List).attrs({
   as: 'li',
 })`
   width: 80px;
-  background-color: white;
+  background-color: ${({ active }) =>
+    active ? "red" : "white"
+  };
   padding: 20px 40px;
   flex-direction: column;
   align-items: center;
@@ -32,6 +34,7 @@ export const Item = styled(List).attrs({
   :focus,
   :hover {
     transform: scale(1.1);
+    
   }
 `;
 
