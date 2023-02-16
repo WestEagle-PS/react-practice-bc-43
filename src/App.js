@@ -7,10 +7,13 @@ import statistics from './data/statistics.json';
 import forbes from './data/forbes.json';
 import transactions from './data/transactions.json';
 import { Transactions } from './components/Transactions/Transactions';
+import Basket from './components/Basket/Basket';
+import basket from './data/data.basket.json';
 
 function App() {
   return (
     <div className="App">
+      <Basket data={basket} />
       <BlogCard {...article} />
       <Statistics data={statistics} title="Main Statistics" />
       {/* <Statistics data={statistics} /> */}
