@@ -9,17 +9,19 @@ import transactions from './data/transactions.json';
 import { Transactions } from './components/Transactions/Transactions';
 import Basket from './components/Basket/Basket';
 import basket from './data/data.basket.json';
+import { ContactsPage } from './components/Contacts/ContactsPage/ContactsPage';
 
 function App() {
   return (
     <div className="App">
-      <Basket data={basket} />
+      <ContactsPage />
+      {/* <Basket data={basket} />
       <BlogCard {...article} />
-      <Statistics data={statistics} title="Main Statistics" />
+      <Statistics data={statistics} title="Main Statistics" /> */}
       {/* <Statistics data={statistics} /> */}
-      <Forbes list={forbes} title="hello" />
+      {/* <Forbes list={forbes} title="hello" />
       <Forbes list={forbes} />
-      <Transactions items={transactions} />
+      <Transactions items={transactions} /> */}
     </div>
   );
 }
