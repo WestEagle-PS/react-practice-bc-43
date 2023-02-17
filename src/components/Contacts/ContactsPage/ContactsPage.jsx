@@ -9,7 +9,6 @@ export class ContactsPage extends Component {
   };
 
   addContact = data => {
-    console.log(data);
     const newContact = { ...data, id: nanoid(2) };
     this.setState(prevState => {
       return {
@@ -18,12 +17,19 @@ export class ContactsPage extends Component {
     });
   };
 
+  handleRemove = id => {
+    this.setState(prevState => {
+      const newState = prevState.contact.filter(item => item.id !== id);
+      return { contact: newState };
+    });
+  };
+
   render() {
     return (
       <>
         <ContactsForm addContact={this.addContact} />
         {this.state.contact.length !== 0 && (
-          <ContactList list={this.state.contact} />
+          <ContactList list={this.state.contact} remove={this.handleRemove} />
         )}
       </>
     );
