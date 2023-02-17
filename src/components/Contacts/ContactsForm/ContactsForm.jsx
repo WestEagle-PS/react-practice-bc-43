@@ -4,15 +4,17 @@ import styles from './ContactsForm.module.css';
 const INITIAL_STATE = {
   name: '',
   number: '',
+  favorite: false,
 };
 
 export class ContactsForm extends Component {
   state = { ...INITIAL_STATE };
 
   handleChangeInput = ({ target }) => {
-    const { id, value } = target;
+    const { id, value, checked, type } = target;
+
     this.setState({
-      [id]: value,
+      [id]: type === 'checkbox' ? checked : value,
     });
   };
 
@@ -44,6 +46,14 @@ export class ContactsForm extends Component {
           id="number"
           type="text"
           value={number}
+        />
+        <label htmlFor="favorite">Add contact to favorite</label>
+        <input
+          onChange={this.handleChangeInput}
+          type="checkbox"
+          id="favorite"
+          name="checkbox"
+          checked={this.state.favorite}
         />
         <button type="submit">Add</button>
       </form>
