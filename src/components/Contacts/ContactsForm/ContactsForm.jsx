@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Component } from 'react';
 import styles from './ContactsForm.module.css';
 
@@ -60,3 +61,7 @@ export class ContactsForm extends Component {
     );
   }
 }
+
+ContactsForm.propTypes = {
+  addContact: PropTypes.func.isRequired,
+};
