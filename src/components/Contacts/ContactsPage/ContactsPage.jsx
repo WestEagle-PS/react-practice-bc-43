@@ -11,6 +11,7 @@ export class ContactsPage extends Component {
   };
 
   addContact = data => {
+    console.log(data);
     const isDublicateNumber = this.state.contact.find(
       ({ number }) => number === data.number
     );
